@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type  5.2.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--link rel="stylesheet" href="http://www.ruanyifeng.com/blog/styles.css" type="text/css" /-->
+<link rel="start" href="http://www.ruanyifeng.com/blog/" title="Home" />
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="http://feeds.feedburner.com/ruanyifeng" />
+<script type="text/javascript" src="http://www.ruanyifeng.com/blog/mt.js"></script>
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="http://www.ruanyifeng.com/blog/2019/09/weekly-issue-73.html">
+<dc:title>科技爱好者周刊：第 73 期</dc:title>
+<dc:description>这里记录每周值得分享的科技内容，周五发布。...</dc:description>
+<dc:creator>阮一峰</dc:creator>
+<dc:date>2019-09-13T09:20:02+08:00</dc:date>
+<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/3.0/" />
+</Work>
+<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/3.0/">
+</License>
+</rdf:RDF>
+-->
+
+<style>
+body {
+  background-color: #f5f5d5;
+}
+
+#container::before {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.1);
+  text-align: center;
+  content: "本站显示不正常，可能因为您使用了广告拦截器。";
+}
+
+</style>
+<script>
+function loadjscssfile(filename, filetype){
+    if (filetype=="js"){ //if filename is a external JavaScript file
+        var fileref=document.createElement('script')
+        fileref.setAttribute("type","text/javascript")
+        fileref.setAttribute("src", filename)
+    }
+    else if (filetype=="css"){ //if filename is an external CSS file
+        var fileref=document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", filename)
+    }
+    if (typeof fileref!="undefined")
+        document.getElementsByTagName("head")[0].appendChild(fileref)
+}
+//loadjscssfile("http://www.ruanyifeng.com/blog/styles.css", "css");
+loadjscssfile('../dist/output.min.css', 'css');
+
+function checker() {
+// var img = document.querySelector('img[src^="http://www.ruanyifeng.com/blog/images"]');
+var img = document.querySelector('a > img[src*="wangbase.com/blogimg/asset/"]');
+  if (img && window.getComputedStyle(img).display === 'none'){
+    var sponsor = document.querySelector('.entry-sponsor');
+    var prompt = document.createElement('div');
+    prompt.style = 'border: 1px solid #c6c6c6;border-radius: 4px;background-color: #f5f2f0;padding: 15px; font-size: 14px;';
+  prompt.innerHTML = '<p>您使用了广告拦截器，导致本站内容无法显示。</p><p>请将 www.ruanyifeng.com 加入白名单，解除广告屏蔽后，刷新页面。谢谢。</p>';
+    sponsor.parentNode.replaceChild(prompt, sponsor);
+    document.querySelector('#main-content').innerHTML = '';
+  }
+}
+
+setTimeout(checker, 1000);
+
+</script>
+
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.ruanyifeng.com/blog/rsd.xml" />
+    <title>阮一峰的网络日志</title>
+<script type="text/javascript" src="tooltip.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+  enableTooltips("latest-comments");
+});
+
+/*
+window.addEventListener('load', function(event) {
+  setTimeout(function () {
+    hab('#homepage_cre');
+  }, 1000);
+});
+*/
+</script>
+
+</head>
+<body id="scrapbook" class="mt-main-index two-columns">
+<script>
+if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) document.body.classList.add('mobile');
+</script>
+    <div id="container">
+        <div id="container-inner">
+
+
+            <div id="header">
+    <div id="header-inner">
+        <div id="header-content">
+
+
+            <h1 id="header-name">阮一峰的网络日志</h1>
+
+<div id="google_search">
+<!-- SiteSearch Google -->
+<form action="https://www.baidu.com/s" target="_blank" method="get" id="cse-search-box">
+  <div>
+  <input type="text" size="20" name="origin" class="searchbox" id="sbi" value="" />
+  <input type="hidden" name="wd" value="" />
+  <!--input type="image" src="/static/themes/theme_scrapbook/images/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索" name="sa" onclick="this.form.wd.value = this.form.origin.value + ' inurl:www.ruanyifeng.com/blog'" /-->
+  <input type="image" src="/static/themes/theme_scrapbook/images/top_search_submit.gif" class="searchbox_submit" value="" alt="搜索" name="sa" onclick="this.form.wd.value = this.form.origin.value + ' 阮一峰'" />
+</div>
+</form>
+
+<!-- SiteSearch Google -->
+</div>
+<div id="feed_icon">
+<a href="/feed.html" title="订阅Feed">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAUzSURBVHjavFdbbFRVFF3nPjoz7dTWTittaW0jUDRAUqaNojyqREnEQKgfUj9MqqAmhqRt/OCD4CuY+Kckoh+aiGKC+gMJbdHoRysJ8dkhhmJLNdDKtJU+6GMK87j3Hs85d2Z6HzNtMYWb3Dn3NWftvfba+5xNYDl+e6Fkj6yqb/oDRbWq14vlPBLRKCITkxf0ROLt+hNjp1PPSRK4kA3vF1dXNRcWlyA2OQU9eos9opAkAiKxD+XkKO6t15aRWO7J/MgmAZU8MEgexgZHMX518Dh72sYMmVKShnxWuWHdHtxKIDIYTgMuDzgfmSOIQkYMpdUF8OY92Hytt4/jvkg47czzU16iQovM3QFwmNck+Yyduu7D6NA0Z6JR4THntFs9V4tWQg6Ui3s6MwKDncsFTnXKLJhDSeUK3AgPtyhccDzmVs999buRt/1Vm4i0od+hX7+MRG87jPGB/w1u8FPj9xEw7McVrnYuOCvtpjTth3J/nTg99c8LRhKhr6D3dTB5R24bXFwbMXBsyZzeoXaycEpJ95TB09AGX/NpqLVNtw8urnVzLvHjFNxiFqRy2OOHuqUVnue+ACkoWzo4O6lGzTmuHq6nPvY2m9rVqjrIK2rMEKxqyG5NPAKt+wjo0LklgfNxJkZMA3KJvqRUk3z5UFY3QH14P0h+WUY79HPvgv7VuSg4ZRGY1YgZgqXmORccF17sy2ehnf9AeO085K2HQFbtXBScj0LcpgF2cN+WV+DZ/LJQu6gD4R7oV7pBJwbSgtMvfiPoVp56DySwxm7EtkMs1WdAB7qzggsDJKQYsHucSkOudrkiCPWR/fA2nYCn8SNIK4NptSMyAu3sAdDRkIsJdfth0LzSrODUoPNZ4KI9SxJI5UHk7D4GdQfz2us31c7CoHMjRkKuDPHseCMrONVhNcDJwMJpKFVvg9L4OaTiNWm1x789KCqkrXhVBiEz0WYCT2nAzQAD1/vaETv1GrRfP4Vx5cfMNcDPwvP0h0DhanPym7OIf/+O67vcJ1/PCJ4KgdzaUP6Wz+dU+5yIL6fV+PsHGAOdwlPpvvUOyeeAVGyCdqkDNB6DPjsBSrnndfOGevOh3RhGItxvA+fX1CtbGFhgYUFkFMZPR6F1HnClHq8HyubWtJexX06CRmdt33hrd7nA7SFY4qoGpnYuOKcRykPPgDCBcsHx9Iv+fNL2PueBehCWUfYQIIMGLOCcOmXDXsh1+yCt35tUPfvzGFuSvzvoinXOxqa02qOhM6733nVP2MAdaej2XN11DPKjLZCD+yBvahGCo7JfTKAN9UD7s8Oe9zUNIhz8fWI8DG2k38WCFdxugANcXrvTVd1IEbuv3Jour7Hzn7jLMBNfKs7R3i67gRVrbeCOEDhinmWhAatsqdquM2XzHZINhK2cqTjHr/XZdVJUbgN3MWAVXKbSyg9jesRW2xP9di+lwrL5ojM3m2H/kG9hwcIA37c71W6wJdW2J2S5nrjYbq/t1AHAhJsKQeyfPvf6IMJgghPJhFZ4x0KlfLFvt22du45Au/A1SOlGc0P672XXwhLtOcM0kTTEMMd0qkVmMNXxMd/tsedUjInr4SQDgOfeXMSiN0FCL5WHah4L1qqYXPJOJlttd+a5M+YpcG5poLYKQ5f+6JJ4r8bbJYP47hq4r7QAs9PjYNhHJd4o8l5taiwuOpa7AS4XKqI/5NjJbTnaWK92nLdLuhQAJayRNMiygXPBeQN+Qbvu0zDc3y+aUzhbkGR73sI7ljvUnndx2q3t+X8CDAD66FtrIL864AAAAABJRU5ErkJggg==" alt="" style="border: 0pt none;" />
+</a></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+            <div id="content">
+                <div id="content-inner">
+
+
+                    <div id="alpha">
+                        <div id="alpha-inner">
+
+                            
+                            <div id="entry-2123" class="entry-asset asset hentry">
+    <div class="asset-header">
+        <h2 class="asset-name entry-title"><a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-77.html" rel="bookmark">科技爱好者周刊：第 77 期</a></h2>
+<p id="asset-tags">
+
+
+分类<span class="delimiter">：</span>
+<a href="http://www.ruanyifeng.com/blog/weekly/" rel="tag">周刊</a>
+
+
+
+</p>     
+</div>
+    <div class="asset-content entry-content">
+
+        <div class="asset-body">
+            <p>这里记录每周值得分享的科技内容，周五发布。</p>
+
+        </div>
+
+
+
+        <div class="asset-more-link">
+            <p><a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-77.html" rel="bookmark">继续阅读全文 »</a></p>
+        </div>
+
+    </div>
+    <div class="asset-footer">
+<div class="asset-meta">
+           <p> <span class="byline">
+
+           <abbr class="published" title="2019-10-11T09:09:40+08:00">2019年10月11日 09:09</abbr>
+            </span>
+
+            <span class="separator">|</span> <a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-77.html#comments">留言（23）</a>
+            
+
+        </p></div>
+</div>
+</div>
+
+
+
+                     
+<div id="homepage">
+<h3>最新文章</h3>
+<ul>
+  
+<li class="module-list-item"><span>2019年10月 4日 » </span><a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-76.html">科技爱好者周刊：第 76 期</a></li>
+  
+<li class="module-list-item"><span>2019年09月27日 » </span><a href="http://www.ruanyifeng.com/blog/2019/09/weekly-issue-75.html">科技爱好者周刊：第 75 期</a></li>
+  
+<li class="module-list-item"><span>2019年09月20日 » </span><a href="http://www.ruanyifeng.com/blog/2019/09/weekly-issue-74.html">科技爱好者周刊：第 74 期</a></li>
+  
+<li class="module-list-item"><span>2019年09月13日 » </span><a href="http://www.ruanyifeng.com/blog/2019/09/weekly-issue-73.html">科技爱好者周刊：第 73 期</a></li>
+  
+<li class="module-list-item"><span>2019年09月12日 » </span><a href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程</a></li>
+  
+<li class="module-list-item"><span>2019年09月 9日 » </span><a href="http://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html">Cookie 的 SameSite 属性</a></li>
+  
+<li class="module-list-item"><span>2019年09月 6日 » </span><a href="http://www.ruanyifeng.com/blog/2019/09/weekly-issue-72.html">科技爱好者周刊：第 72 期</a></li>
+  
+  <li class="module-list-item"><a href="http://www.ruanyifeng.com/blog/archives.html"><strong>更多文章……</strong></a></li>
+</ul>
+
+
+        
+</div>
+                        
+<div style="clear:both;float:none;text-align:center;margin:2em auto;display: inline-block ! important;width: 100%;
+    max-width: 100%;">
+    
+        <a href="http://3jk.top/zhibo9" title="3节课" 
+target="_blank" style="border:none;"><img alt="3节课" src="https://www.wangbase.com/blogimg/asset/201909/bg2019091006.jpg" style="border:none;display: block ! important;max-width: 100%;width: 100%;max-width: 100%;"></a>    
+    <p style="font-size:16px;text-align:center;"><a title="3节课" href="http://3jk.top/zhibo9" target="_blank">数据科学入门</a></p>
+
+    <br />
+    
+        <a href="https://time.geekbang.org/college/algorithm/100034301?utm_source=ryf_web&utm_medium=ryfA&utm_term=ryfA" title="极客时间" 
+target="_blank" style="border:none;"><img alt="极客时间" src="https://www.wangbase.com/blogimg/asset/201909/bg2019091614.jpg" style="border:none;display: block ! important;max-width: 100%;width: 100%;max-width: 100%;"></a>    
+    <p style="font-size:16px;text-align:center;"><a title="极客时间" href="https://time.geekbang.org/college/algorithm/100034301?utm_source=ryf_web&utm_medium=ryfA&utm_term=ryfA" target="_blank">如何掌握算法？</a></p>
+
+
+
+</div>                                                
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+<div class="module-comments module"  id="latest-comments">
+  <h2 class="module-header">最新留言</h2>
+  <div class="module-content">
+  <ul class="module-list">
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-76.html#comment-413932" title="科技爱好者周刊：第 76 期" tooltip="阮博主，我是一名在国内金融行业工作的女生，想转码，AI算法方向，可以说是零基础了，目前有在coursera等网课平台学习……">呆呆瑶</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-76.html#comment-413931" title="科技爱好者周刊：第 76 期" tooltip="
+引用蔡的发言：
+
+&quot;日本企业的产业升级之路&quot;,仔细看了，觉得写的很有意思。
+谢谢你每周的分享，让我……">瞎读书</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2017/05/websocket.html#comment-413930" title="WebSocket 教程" tooltip="阮老师，请教您一个问题，redux-saga怎么和webSocket结合使用并保持长连接，网上例子太少了，您能出个教程吗……">socketaaa</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-77.html#comment-413928" title="科技爱好者周刊：第 77 期" tooltip="  现代小房子好精致，北上广深的民房 应该改造下. 
+  ……">老夫子</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/09/react-hooks.html#comment-413927" title="React Hooks 入门教程" tooltip="一直在写ng，最近看react，以前觉得ng重，最近随着学习慢慢深入感觉ng真轻……">siegaii</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-77.html#comment-413926" title="科技爱好者周刊：第 77 期" tooltip="储值卡对于企业是个好东西，但我一张也没有，除开银行卡。……">微wx笑</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/03/agile-development.html#comment-413925" title="敏捷开发入门教程" tooltip="
+引用gogogo的发言：
+
+敏捷开发意味着需求的不断变更，不断的加班。。。。。
+
+
+
+很对哎~  我司就是敏捷开发
+天……">滴滴答答答答</a>
+      
+    </li>
+    
+    <li class="module-list-item">
+      
+      <a href="http://www.ruanyifeng.com/blog/2019/10/weekly-issue-77.html#comment-413924" title="科技爱好者周刊：第 77 期" tooltip="阮老师可以考虑把网站的字体改成非衬线字体了，9102 年了在电脑上看到衬线字体越来越别扭了。……">Zkerhcy</a>
+      
+    </li>
+    
+  </ul>
+  
+  </div>
+</div>    
+
+
+<div class="module-categories module">
+<h2 class="module-header">友情链接</h2>
+<a href="https://ke.qq.com/next_detail/index.html?id=1&from=800007110" target="_blank" title="腾讯课堂 NEXT 学院" id="homepage_sponsor" tooltip="腾讯课堂 NEXT 学院">
+<div class="module-content">
+  <p class="sponsor">
+  <img alt="腾讯课堂 NEXT 学院" style="width: 80%;border: none;padding: 0.5rem 0rem;max-width: 160px;" src="https://www.wangbase.com/blogimg/asset/201901/bg2019011201.png"/>
+  </p>
+</div>
+</a>
+</div>
+
+<div class="module-categories module">
+<h2 class="module-header">关于</h2>
+<div class="module-content">
+  <ul class="module-list">
+  <p class="module-list-item"><a href="http://www.ruanyifeng.com/blog/images/person_shot.jpg" onclick="window.open('http://www.ruanyifeng.com/blog/images/person2.jpg','popup','width=480,height=640,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><img src="http://www.ruanyifeng.com/blog/images/person2_s.jpg" width="80" height="106" alt="个人照片" /></a>
+  </p>
+    <!--li class="module-list-item"><a href="/about.html">个人简介</a>，<a href="2015/02/turing-interview.html" target="_blank">访谈</a></li-->
+    <!--li class="module-list-item">Email：<br /><a href="mailto:yifeng.ruan@gmail.com">yifeng.ruan@gmail.com</a></li-->
+    <li class="module-list-item">文章：<a href="http://www.ruanyifeng.com/blog/archives.html">1829</a>，留言：54067</li>
+    <li class="module-list-item"><a href="http://weibo.com/ruanyf" target="_blank">微博</a>，<a href="https://twitter.com/ruanyf" target="_blank">推特</a></li>
+    <li class="module-list-item"><a href="https://github.com/ruanyf" target="_blank">GitHub</a></li>
+  </ul>
+</div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+            <div id="footer">
+<div id="footer-inner">
+   <div id="footer-content">
+
+     <section>
+       <h2>关注我</h2>
+       <p><a title="微博" href="http://weibo.com/ruanyf" target="_blank">微博</a></p>
+       <p><a title="Twitter" target="_blank" href="https://twitter.com/ruanyf">推特</a></p>
+       <p><a title="GitHub" target="_blank" href="https://github.com/ruanyf">GitHub</a></p>
+       <p><a title="Instagram" target="_blank" href="http://instagram.com/ruanyf">Instagram</a></p>
+<!--
+     </section>
+
+     <section>
+       <h2>Feed</h2>
+       <p><a title="FeedBurner" href="http://feeds.feedburner.com/ruanyifeng" target="_blank">FeedBurner</a></p>
+       <p><a title="atom.xml" href="http://www.ruanyifeng.com/blog/atom.xml" target="_blank">atom.xml</a></p>
+-->
+       <p><a title="订阅" href="https://app.feedblitz.com/f/f.fbz?Sub=348868" target="_blank">邮件订阅</a></p>
+<!--
+       <h2>授权方式</h2>
+       <p><a title="许可证" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" target="_blank">自由转载-非商用-非衍生-保持署名</a></p>
+--!>
+     </section>
+     <section>
+       <h2>支持我</h2>
+       <p><a title="投放广告" href="http://www.ruanyifeng.com/support.html" target="_blank">投放广告</a></p>
+
+       <h2>联系我</h2>
+       <p>支付宝：<a title="支付宝" href="alipays://platformapi/startapp?appId=20000067&url=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog" target="_blank">yifeng.ruan@gmail.com</a></p>
+       <p>Email: <a title="电子邮件" href="mailto:yifeng.ruan@gmail.com" target="_blank">yifeng.ruan@gmail.com</a></p>
+     </section>
+
+    </div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46829782-1', 'ruanyifeng.com');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" src="/blog/stats.js"></script>
+<script>
+var supportImg = document.querySelector('#support-img');
+
+if (supportImg && _hmt) {
+  _hmt.push(['_trackEvent', 'banner', 'load']);
+  supportImg.addEventListener('click', function () {
+    _hmt.push(['_trackEvent', 'banner', 'click']);
+  }, false);
+}
+
+var homepageImg = document.querySelector('#homepage_sponsor');
+if (homepageImg && _hmt) {
+  _hmt.push(['_trackEvent', 'homepage-banner', 'load']);
+  homepageImg.addEventListener('click', function () {
+    _hmt.push(['_trackEvent', 'homepage-banner', 'click']);
+  }, false);
+}
+</script>
+
+  </div>
+</div>
+
+
+
+        </div>
+          
+    </div>
+
+        
+</body>
+</html>
