@@ -1,0 +1,7 @@
+@use "sass:color";
+
+#comments-open {
+  background: color.adjust($background-color, $lightness: -5%);
+  padding: 0em 1em 2em 2em;
+  border-radius: 2em;
+}

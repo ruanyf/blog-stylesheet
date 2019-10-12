@@ -1506,6 +1506,12 @@ pre[class*=language-] {
   color: inherit;
 }
 
+#comments-open {
+  background: #f0f0c0;
+  padding: 0em 1em 2em 2em;
+  border-radius: 2em;
+}
+
 #footer {
   margin: 0 1em;
   border-top: 1px solid #d3d3d3;
